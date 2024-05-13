@@ -1,0 +1,36 @@
+{
+  "Wheat": {
+    "Max": 120,
+    "Min": 30
+  },
+
+  "Corn": {
+    "Max": 115,
+    "Min": 35
+  },
+
+  "Dates": {
+    "Max": 700,
+    "Min": 200
+  },
+
+  "Potatoes": {
+    "Max": 150,
+    "Min": 35
+  },
+
+  "Tomatoes": {
+    "Max": 200,
+    "Min": 40
+  },
+
+  "Green Pepper": {
+    "Max": 210,
+    "Min": 40
+  },
+
+  "Aubergines": {
+    "Max": 180,
+    "Min": 50
+  }
+}

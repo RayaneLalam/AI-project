@@ -1,0 +1,580 @@
+{
+  "Algeria": {
+    "Adrar": {
+      "Area": 64682,
+      "Products": {
+        "Wheat": 38,
+        "Corn": 31,
+        "Dates": 0,
+        "Potatoes": 173,
+        "Tomatoes": 560,
+        "Green Pepper": 315,
+        "Aubergines": 450
+      }
+    },
+    "Chlef": {
+      "Area": 203230,
+      "Products": {
+        "Wheat": 24,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 870,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Laghouat": {
+      "Area": 77732,
+      "Products": {
+        "Wheat": 32,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Oum_El_Bouaghi": {
+      "Area": 360885,
+      "Products": {
+        "Wheat": 17,
+        "Corn": 43,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Batna": {
+      "Area": 422677,
+      "Products": {
+        "Wheat": 16.5,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 800,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Bejaia": {
+      "Area": 130917,
+      "Products": {
+        "Wheat": 25,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 198,
+        "Tomatoes": 1001,
+        "Green Pepper": 251,
+        "Aubergines": 0
+      }
+    },
+    "Biskra": {
+      "Area": 185960,
+      "Products": {
+        "Wheat": 41,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 1454,
+        "Green Pepper": 750,
+        "Aubergines": 619
+      }
+    },
+    "Bechar": {
+      "Area": 36842,
+      "Products": {
+        "Wheat": 25,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 157,
+        "Green Pepper": 0,
+        "Aubergines": 120
+      }
+    },
+    "Blida": {
+      "Area": 50369,
+      "Products": {
+        "Wheat": 30,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 737,
+        "Green Pepper": 0,
+        "Aubergines": 476
+      }
+    },
+    "Bouira": {
+      "Area": 189960,
+      "Products": {
+        "Wheat": 31,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tamanrasset": {
+      "Area": 12027,
+      "Products": {
+        "Wheat": 23.8,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 584,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tebessa": {
+      "Area": 312175,
+      "Products": {
+        "Wheat": 14,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tlemcen": {
+      "Area": 350285,
+      "Products": {
+        "Wheat": 10.7,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 260,
+        "Tomatoes": 971,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tiaret": {
+      "Area": 688725,
+      "Products": {
+        "Wheat": 12.5,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tizi_Ouzou": {
+      "Area": 98842,
+      "Products": {
+        "Wheat": 23.5,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 222,
+        "Tomatoes": 947,
+        "Green Pepper": 0,
+        "Aubergines": 349
+      }
+    },
+    "Algiers": {
+      "Area": 28870,
+      "Products": {
+        "Wheat": 29,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 309,
+        "Tomatoes": 957,
+        "Green Pepper": 323,
+        "Aubergines": 455
+      }
+    },
+    "Djelfa": {
+      "Area": 387052,
+      "Products": {
+        "Wheat": 26,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 750,
+        "Green Pepper": 0,
+        "Aubergines": 300
+      }
+    },
+    "Jijel": {
+      "Area": 45268,
+      "Products": {
+        "Wheat": 27,
+        "Corn": 161,
+        "Dates": 0,
+        "Potatoes": 246,
+        "Tomatoes": 1437,
+        "Green Pepper": 2030,
+        "Aubergines": 632
+      }
+    },
+    "Setif": {
+      "Area": 365312,
+      "Products": {
+        "Wheat": 18,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 898,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Saida": {
+      "Area": 308206,
+      "Products": {
+        "Wheat": 11,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Skikda": {
+      "Area": 131829,
+      "Products": {
+        "Wheat": 23.4,
+        "Corn": 45,
+        "Dates": 0,
+        "Potatoes": 224,
+        "Tomatoes": 611,
+        "Green Pepper": 0,
+        "Aubergines": 400
+      }
+    },
+    "Sidi_Bel_Abbes": {
+      "Area": 363193,
+      "Products": {
+        "Wheat": 10,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Annaba": {
+      "Area": 47449,
+      "Products": {
+        "Wheat": 31,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 215,
+        "Tomatoes": 0,
+        "Green Pepper": 253,
+        "Aubergines": 0
+      }
+    },
+    "Guelma": {
+      "Area": 187080,
+      "Products": {
+        "Wheat": 33,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Constantine": {
+      "Area": 125004,
+      "Products": {
+        "Wheat": 30,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 809,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Medea": {
+      "Area": 339709,
+      "Products": {
+        "Wheat": 17.5,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Mostaganem": {
+      "Area": 132268,
+      "Products": {
+        "Wheat": 20,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 304,
+        "Tomatoes": 851,
+        "Green Pepper": 0,
+        "Aubergines": 570
+      }
+    },
+    "M'Sila": {
+      "Area": 277592,
+      "Products": {
+        "Wheat": 23,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 1000,
+        "Green Pepper": 800,
+        "Aubergines": 650
+      }
+    },
+    "Mascara": {
+      "Area": 312787,
+      "Products": {
+        "Wheat": 12,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 692,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Ouargla": {
+      "Area": 59261,
+      "Products": {
+        "Wheat": 34,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 150,
+        "Tomatoes": 745,
+        "Green Pepper": 1023,
+        "Aubergines": 313
+      }
+    },
+    "Oran": {
+      "Area": 86757,
+      "Products": {
+        "Wheat": 7,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 280,
+        "Tomatoes": 945,
+        "Green Pepper": 316,
+        "Aubergines": 366
+      }
+    },
+    "El_Bayadh": {
+      "Area": 77288,
+      "Products": {
+        "Wheat": 24,
+        "Corn": 75,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Illizi": {
+      "Area": 3038,
+      "Products": {
+        "Wheat": 28,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 200,
+        "Green Pepper": 110,
+        "Aubergines": 0
+      }
+    },
+    "Bordj_Bou_Arreridj": {
+      "Area": 185966,
+      "Products": {
+        "Wheat": 14,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Boumerdes": {
+      "Area": 62956,
+      "Products": {
+        "Wheat": 29.2,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 266,
+        "Tomatoes": 741,
+        "Green Pepper": 0,
+        "Aubergines": 785
+      }
+    },
+    "El_Tarf": {
+      "Area": 74173,
+      "Products": {
+        "Wheat": 25,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 220,
+        "Tomatoes": 1200,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tindouf": {
+      "Area": 872,
+      "Products": {
+        "Wheat": 0,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 880,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Tissemsilt": {
+      "Area": 145456,
+      "Products": {
+        "Wheat": 17,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "El_Oued": {
+      "Area": 113200,
+      "Products": {
+        "Wheat": 36,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 994,
+        "Green Pepper": 500,
+        "Aubergines": 320
+      }
+    },
+    "Khenchela": {
+      "Area": 257456,
+      "Products": {
+        "Wheat": 20,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 1363,
+        "Green Pepper": 0,
+        "Aubergines": 900
+      }
+    },
+    "Souk_Ahras": {
+      "Area": 253606,
+      "Products": {
+        "Wheat": 16,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 42,
+        "Aubergines": 0
+      }
+    },
+    "Tipaza": {
+      "Area": 61800,
+      "Products": {
+        "Wheat": 28,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 300,
+        "Tomatoes": 1052,
+        "Green Pepper": 500,
+        "Aubergines": 600
+      }
+    },
+    "Mila": {
+      "Area": 237557,
+      "Products": {
+        "Wheat": 31.1,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 750,
+        "Green Pepper": 0,
+        "Aubergines": 800
+      }
+    },
+    "Ain_Defla": {
+      "Area": 181713,
+      "Products": {
+        "Wheat": 29,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 1117,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Naama": {
+      "Area": 28283,
+      "Products": {
+        "Wheat": 15.4,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    },
+    "Ain_Temouchent": {
+      "Area": 180994,
+      "Products": {
+        "Wheat": 12,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 276,
+        "Tomatoes": 860,
+        "Green Pepper": 0,
+        "Aubergines": 358
+      }
+    },
+    "Ghardaia": {
+      "Area": 72491,
+      "Products": {
+        "Wheat": 38,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 515,
+        "Green Pepper": 400,
+        "Aubergines": 400
+      }
+    },
+    "Relizane": {
+      "Area": 281333,
+      "Products": {
+        "Wheat": 14.8,
+        "Corn": 0,
+        "Dates": 0,
+        "Potatoes": 0,
+        "Tomatoes": 0,
+        "Green Pepper": 0,
+        "Aubergines": 0
+      }
+    }
+  }
+}
