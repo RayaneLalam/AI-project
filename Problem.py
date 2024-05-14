@@ -27,6 +27,7 @@ class AgricultureProblem:
         """
         state: Country = node.state
         child_nodes = []
+        node.state.print_production()
         """print("Parent node: ")
         node.state.print_production()
         print("Children nodes: ")"""

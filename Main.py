@@ -74,17 +74,19 @@ index = 1
 
 
 for country, wilaya in data.items():
-    
+
     for wilaya, details in wilaya.items():
-        index_land= 100*index
-        Area = details["Area"]/details["NumberLands"]
+        index_land = 100 * index
+        Area = details["Area"] / details["NumberLands"]
         for i in range(details["NumberLands"]):
             land = Land(index, index_land, Area)
-            index_land+=1
             for product, value in details["Products"].items():
                 land.set_product_yield(product, value)
-        Lands[index_land] = land
-        index += 1 
+            Lands[index_land] = land
+            index_land += 1
+        index += 1
+
+
 
 """for land in Lands.values():
     print(land.land_id)
@@ -95,8 +97,8 @@ InitialState = Country("Algeria", Lands)
 selfSufficiency = {
     "Wheat": 10500000,
     "Corn": 9300000,
-    "Dates": 0,
-    "Potatoes": 11000000,
+    "Dates": 600000,
+    "Potatoes": 110000000,
     "Tomatoes": 16400000,
     "Green Pepper": 12700000,
     "Aubergines": 126000
