@@ -1,4 +1,4 @@
-from DFS import *
+from GraphSearch import *
 from Node import *
 from Problem import *
 import json
@@ -22,7 +22,7 @@ def SolveProblem(Problem: AgricultureProblem):
     if Strategy == "1":
         Reverseresult, NumberOfNodes = BreadthFirstSearch(Problem)#Goal state
     elif Strategy == "2":
-        Reverseresult, NumberOfNodes = GraphSearch(Problem, "DFS")#Goal state
+        Reverseresult, NumberOfNodes = DepthFirstSearch(Problem)#Goal state
     elif Strategy == "3":
         Reverseresult, NumberOfNodes = UniformCostSearch(Problem)#Goal state
     elif Strategy == "4":
@@ -54,16 +54,11 @@ def SolveProblem(Problem: AgricultureProblem):
 
     #We retrieve the path to the goal by starting from the goal
     #And climbing the tree (since every node has access to its parent)
-    if isinstance(Reverseresult, Node):
-        while Reverseresult:
-            result.append(Reverseresult)
-            Reverseresult = Reverseresult.parent #climbing the tree
+    if isinstance(Reverseresult, Country):
+        Reverseresult.print_production()
     else:
         print(Reverseresult)
-        
-    for i in range(len(result) - 1, -1, -1): #Printing the list in reverse order
-        Problem.printNod(result[i])
-        
+                    
     print("Number of visited Nodes: ", NumberOfNodes)
 
 
@@ -82,7 +77,8 @@ for country, wilaya in data.items():
         Area = details["Area"]
         land = Land(index, index, Area)
         for product, value in details["Products"].items():
-            land.set_product_yield(product, value)
+            if value != 0:
+                land.set_product_yield(product, value)
         Lands[index] = land
         index += 1 
 
@@ -93,13 +89,13 @@ for country, wilaya in data.items():
 InitialState = Country("Algeria", Lands)
 
 selfSufficiency = {
-    "Wheat": 10500,
-    "Corn": 9300,
+    "Wheat": 10500000,
+    "Corn": 9300000,
     "Dates": 0,
-    "Potatoes": 11000,
-    "Tomatoes": 16400,
-    "Green Pepper": 12700,
-    "Aubergines": 1260
+    "Potatoes": 11000000,
+    "Tomatoes": 16400000,
+    "Green Pepper": 12700000,
+    "Aubergines": 126000
   }
 
 goalState = Country("Algeria", Lands, selfSufficiency)
@@ -112,12 +108,16 @@ for product, value in newstate.current_production.items():
 goalState.print_production()
 newstate.print_production()"""
 
-
+#InitialState.plant(1, "Wheat")
+"""newstate = copy.deepcopy(InitialState)
+print(newstate.lands[1].isPlanted)"""
 
 
 problem = AgricultureProblem(InitialState, goalState)
 
+
 SolveProblem(problem)
 
 #problem.expand_node(Node(InitialState), "DFS")
+
 

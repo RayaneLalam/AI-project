@@ -3,6 +3,7 @@ from typing import List
 import copy
 from Node import Node
 from Country import Country
+from collections import deque
 import time
 
 class AgricultureProblem:
@@ -25,18 +26,26 @@ class AgricultureProblem:
         Expand the given node by generating all possible child nodes.
         """
         state: Country = node.state
-        child_nodes: List[Node] = []
+        child_nodes = []
+        """print("Parent node: ")
         node.state.print_production()
+        print("Children nodes: ")"""
         for land in state.empty_lands:
             for product in land.available_products:
                 next_state = copy.deepcopy(state)
                 next_state.plant(land.land_id, product)
-                next_state.print_production()
-                child_nodes.append(Node(next_state, parent=node))
-        print(len(child_nodes))
-        print("\n\n")
-        time.sleep(30)
-        return child_nodes
+                #next_state.print_production()
+                if Strategy == "BFS":
+                    child_nodes.append(Node(next_state, parent=node))
+                elif Strategy == "DFS":
+                    child_nodes.insert(0, Node(next_state, parent=node))
+
+            """print(len(child_nodes))
+            print("\n\n")
+            time.sleep(2)"""
+            return child_nodes
+        return []
+        
     
     def pathCost(self, node):
         """

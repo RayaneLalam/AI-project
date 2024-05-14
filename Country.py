@@ -19,8 +19,8 @@ class Country:
         # }
 
     def plant(self, land_id: int, product: str) -> None:
-        #if not self.lands[land_id].is_planted:
-        self.current_production[product] += self.lands[land_id].get_land_production(product)
+        if not self.lands[land_id].isPlanted:
+            self.current_production[product] += self.lands[land_id].get_land_production(product)
             # The price percentage must be calculated in the problem class
             # because self-sufficiency is defined there
             # price_percentage = (
@@ -43,6 +43,10 @@ class Country:
 
     def print_production(self) -> None:
         print(self.current_production)
+        for key in self.lands.keys():
+            if self.lands[key].isPlanted:
+                print("Wilaya", key, "Planted with product", self.lands[key].PlantedProduct)
+
 
 
     def __eq__(self, other: "Country"):

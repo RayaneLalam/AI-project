@@ -14,7 +14,7 @@ class Land:
     @property
     def available_products(self):
         """Return a list of available products."""
-        return self.PRODUCTS.copy()
+        return self.product_yields.copy()
 
     def set_product_yield(self, product: str, yield_per_hectare: float):
         """Set the yield per hectare for a given product."""

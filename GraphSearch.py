@@ -9,37 +9,44 @@ import heapq  # Priority Queue
 from Node import Node
 from collections import deque
 import random
+import time
+from Problem import *
+from typing import Dict, List
 
 
 
 
-def GraphSearch(Problem, Strategy, MaxDepth=float('inf'), MaxCost=float('inf')):
+
+
+def GraphSearch(Problem: AgricultureProblem, Strategy: str, MaxDepth=float('inf'), MaxCost=float('inf')):
     
     frontier = Frontier(Strategy, Problem)
 
-    nonExpanded = [] #The nodes that went over the MaxCost or MaxDepth
+    nonExpanded = List[Node] #The nodes that went over the MaxCost or MaxDepth
     explored = set() #Initializing the explored set
     
     while not frontier.isEmpty() :#While the frontier is not empty (there are still nodes that can be expanded)
     
-        node = frontier.pop()
+        node: Node = frontier.pop()
                                     
         if node.depth > MaxDepth: #Specific to Iterative deepening
-            return None, len(explored) + 1
+            continue
+            #return None, len(explored) + 1
         
         if node.estimatedCost + node.cost > MaxCost: #Specific to Iterative Deepening A* / Best First
             heapq.heappush(nonExpanded, node)
             
         else:       
             if Problem.is_goal_state(node.state): # Returning the goal
-                return node, len(explored) + 1
+                print("Solution found!")
+                return node.state, len(explored) + 1
             
             if Strategy != "StochasticHillClimbing" and Strategy != "SteepestAscent": #Because local search does not care about the explored nodes
                 explored.add(Node(node.state)) #If the node is not the goal we add it to the explored set
             
-            for child in Problem.expand_node(node, Strategy):                    
-                if child not in explored and not any(node.state == child.state for node in frontier.frontier):  
-                    
+            for child in Problem.expand_node(node, Strategy):  
+               
+                if child not in explored and not any(n.state == child.state for n in frontier.frontier):                  
                     if Strategy == "StochasticHillClimbing":
                         if child < node: #Only better successors
                             frontier.push(child)
@@ -48,7 +55,7 @@ def GraphSearch(Problem, Strategy, MaxDepth=float('inf'), MaxCost=float('inf')):
                                   
     print("Solution not found")
     if nonExpanded: #If nonExpanded is not empty (specific to depth limited)
-        firstRefusedNode = heapq.heappop(nonExpanded) # this is the node with the minimum value that went over the threshhold
+        firstRefusedNode: Node = heapq.heappop(nonExpanded) # this is the node with the minimum value that went over the threshhold
         return firstRefusedNode.cost + firstRefusedNode.estimatedCost, len(explored) #We return the cost of this node
     return node, len(explored)  # failure
 
@@ -58,7 +65,11 @@ def GraphSearch(Problem, Strategy, MaxDepth=float('inf'), MaxCost=float('inf')):
 
 # BFS
 def BreadthFirstSearch(Problem):
-    return GraphSearch(Problem, "BFS")
+    PreviousTime = time.time()
+    result = GraphSearch(Problem, "BFS")
+    NewTime = time.time()
+    print("The time is: ", NewTime - PreviousTime)
+    return result
 
 
 # UCS
@@ -68,12 +79,21 @@ def UniformCostSearch(Problem):
 
 # DFS
 def DepthFirstSearch(Problem):
-    return GraphSearch(Problem, "DFS")
+    PreviousTime = time.time()
+    result = GraphSearch(Problem, "DFS")
+    NewTime = time.time()
+    print("The time is: ", NewTime - PreviousTime)
+    return result
 
 
 # Depth Limited
 def DepthLimitedSearch(Problem, MaxDepth):
-    return GraphSearch(Problem, "DFS", MaxDepth, float("inf"))
+    PreviousTime = time.time()
+    result = GraphSearch(Problem, "DFS", MaxDepth, float("inf"))
+    NewTime = time.time()
+    print("The time is: ", NewTime - PreviousTime)
+    return result
+
 
 
 # Iterative Deepening
@@ -151,7 +171,7 @@ def SteepestAscent(Problem):
 class Frontier:
     # frontier.push(Node(Problem.state, None, None, 0, Problem.heuristic(Node(Problem.state))))
 
-    def __init__(self, Strategy, Problem):
+    def __init__(self, Strategy, Problem: AgricultureProblem):
         self.Strategy = Strategy
         if (
             Strategy == "DFS"
@@ -173,6 +193,7 @@ class Frontier:
         # Pushing the initial State with the right estimated cost
         if Strategy == "DFS" or Strategy == "BFS":
             self.frontier.append(Node(Problem.state))
+            
 
         elif Strategy == "UCS":
             heapq.heappush(self.frontier, Node(Problem.state))
@@ -235,7 +256,7 @@ class Frontier:
             or self.Strategy == "CostLimitedBestFirst"
             or self.Strategy == "SteepestAscent"
         ):
-            node = self.frontier.pop()
+            node = self.frontier.popleft()
 
         elif self.Strategy == "StochasticHillClimbing":
             node = random.choice(self.frontier)
