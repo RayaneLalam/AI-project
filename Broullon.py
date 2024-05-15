@@ -1,25 +1,34 @@
-import json
-from Land import *
+from Wilaya import Wilaya
+from Land import Land
 
-with open('wilaya.json', 'r') as f:
-    data = json.load(f)
+firstLand = Land(1, 101, 10)
+firstLand.PlantedProduct = "Wheat"
 
-Lands = {}
-index = 1
+secondLand = Land(1, 102, 10)
+secondLand.PlantedProduct = "Corn"
+
+dict1 = {
+    101: firstLand,
+    102: secondLand
+}
+
+wilaya1 = Wilaya(2, dict1, 20)
 
 
-for country, wilaya in data.items():
+third = Land(1, 101, 10)
+third.PlantedProduct = "Corn"
 
-    for wilaya, details in wilaya.items():
-        index_land = 100 * index
-        Area = details["Area"] / details["NumberLands"]
-        for i in range(details["NumberLands"]):
-            land = Land(index, index_land, Area)
-            for product, value in details["Products"].items():
-                land.set_product_yield(product, value)
-            Lands[index_land] = land
-            index_land += 1
-        index += 1
+fourth = Land(1, 102, 10)
+fourth.PlantedProduct = "Wheat"
 
-for land in Lands.values():
-    print(land.land_id)
+dict2 = {
+    101: third,
+    102: fourth
+}
+
+wilaya2 = Wilaya(1, dict2, 20)
+
+
+
+
+

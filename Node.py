@@ -1,7 +1,10 @@
+from Country import *
+
+
 class Node:
     
-    def __init__(self, state, parent=None, action=None, cost=0, estimatedCost=0):
-        self.state = state
+    def __init__(self, state: Country, parent=None, action=None, cost=0.0, estimatedCost=0):
+        self.state: Country = state
         self.parent = parent # node
         self.action = action # action performed to get to this node
         self.cost = cost # (incremented with each newly expanded node)
@@ -29,7 +32,7 @@ class Node:
         
         
     #__eq__ overloads the = operator    
-    def __eq__(self, other):
+    def __eq__(self, other: "Node"):
         return isinstance(other, Node) and self.state == other.state
     
     

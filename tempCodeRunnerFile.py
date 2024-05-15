@@ -1,1 +1,1 @@
-            Lands[index_land] = land
+            if value != 0:

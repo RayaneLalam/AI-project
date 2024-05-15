@@ -3,7 +3,7 @@ class Land:
 
     PRODUCTS = ["Wheat", "Corn", "Dates", "Potatoes", "Tomatoes", "Green Pepper", "Aubergines"]
 
-    def __init__(self, wilaya_id: int, land_id: int, area: float, state = False):
+    def __init__(self, wilaya_id: int, land_id: int, area: float):
         self.wilaya_id = wilaya_id
         self.land_id = land_id
         self.area = area
@@ -35,3 +35,11 @@ class Land:
     def is_planted(self):
         """Check if any product is planted on the land."""
         return self.isPlanted
+    
+
+    def __eq__(self, other: "Land"):
+        return self.PlantedProduct == other.PlantedProduct and self.wilaya_id == other.wilaya_id
+    
+
+    def __hash__(self):
+        return hash((self.PlantedProduct, self.wilaya_id))

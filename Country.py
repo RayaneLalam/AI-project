@@ -1,8 +1,10 @@
 from typing import Dict, List
+from Wilaya import Wilaya
 from Land import Land
 
 class Country:
-    def __init__(self, name: str, lands: Dict[int, Land], current_production: Dict[str, float] = {
+
+    def __init__(self, name: str, wilayas: Dict[int, Wilaya], current_production: Dict[str, float] = {
             "Wheat": 0,
             "Corn": 0,
             "Dates": 0,
@@ -12,15 +14,15 @@ class Country:
             "Aubergines": 0,
         }):
         self.name = name
-        self.lands = {land.land_id: land for land in lands.values()}
+        self.wilayas = {wilaya.Id: wilaya for wilaya in wilayas.values()}
         self.current_production = current_production
         # self.current_prices: Dict[str, float] = {
         #     product: float("inf") for product in self.current_production
         # }
 
-    def plant(self, land_id: int, product: str) -> None:
-        if not self.lands[land_id].isPlanted:
-            self.current_production[product] += self.lands[land_id].get_land_production(product)
+    def plant(self, wilayaId: int, product: str) -> None:
+        if len(self.wilayas[wilayaId].empty_lands) > 0:
+            self.current_production[product] += self.wilayas[wilayaId].plant(product)
             # The price percentage must be calculated in the problem class
             # because self-sufficiency is defined there
             # price_percentage = (
@@ -30,7 +32,12 @@ class Country:
             # self.current_prices[product] *= (1 - price_percentage)
 
 
-    
+    def nonfullWilaya(self):
+        for wilaya in self.wilayas.values():
+            if len(wilaya.empty_lands) > 0:
+                return wilaya.Id
+
+
     def __ge__(self, other: "Country"):
         for key in self.current_production.keys() :
             if self.current_production[key] < other.current_production[key]:
@@ -38,30 +45,23 @@ class Country:
         return True  
 
     @property
-    def empty_lands(self) -> List[Land]:
-        return [land for land in self.lands.values() if not land.is_planted]
+    def empty_lands(self, wilayaId) -> List[Land]:
+        return self.wilayas[wilayaId].empty_lands()
 
     def print_production(self) -> None:
         print(self.current_production)
-        for key in self.lands.keys():
-            if self.lands[key].isPlanted:
-                print("Wilaya", key, "Planted with product", self.lands[key].PlantedProduct)
+        for key in self.wilayas.keys():
+            for plantedLand in self.wilayas[key].planted_lands:
+                print("Wilaya", key, "Planted with product", plantedLand.PlantedProduct, "at land", plantedLand.land_id)
 
 
 
     def __eq__(self, other: "Country"):
-        for landId in self.lands.keys():
-            if self.lands[landId].PlantedProduct != other.lands[landId].PlantedProduct or self.current_production != other.current_production:
+        for wilayaId in self.wilayas.keys():
+            if not self.wilayas[wilayaId] == other.wilayas[wilayaId] or self.current_production != other.current_production:
                 return False      
         return True
     
     def __hash__(self):
-        """
-        Define a custom hash function for the Country object.
-        This allows Country objects to be used as keys in dictionaries or elements in sets.
-        """
-        land_hashes = [hash(land) for land in self.lands.values()]
-        land_hashes.sort()  # Sort the hashes to ensure consistent ordering
-        production_hash = hash(tuple(sorted(self.current_production.items())))
-        return hash((tuple(land_hashes), production_hash))
+        return hash((self.name, frozenset(self.wilayas.keys()), frozenset(self.current_production.items())))
 

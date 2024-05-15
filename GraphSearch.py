@@ -7,11 +7,13 @@ Created on Thu Apr 18 16:41:22 2024
 
 import heapq  # Priority Queue
 from Node import Node
+from Country import *
 from collections import deque
 import random
 import time
 from Problem import *
 from typing import Dict, List
+
 
 
 
@@ -44,9 +46,13 @@ def GraphSearch(Problem: AgricultureProblem, Strategy: str, MaxDepth=float('inf'
             if Strategy != "StochasticHillClimbing" and Strategy != "SteepestAscent": #Because local search does not care about the explored nodes
                 explored.add(Node(node.state)) #If the node is not the goal we add it to the explored set
             
+            """for element in explored:
+                element.state.print_production()
+            print("#######################")"""
+
+
             for child in Problem.expand_node(node, Strategy):  
-               
-                if child not in explored and not any(n.state == child.state for n in frontier.frontier):                  
+                if child not in explored and child not in frontier.frontier:                  
                     if Strategy == "StochasticHillClimbing":
                         if child < node: #Only better successors
                             frontier.push(child)
@@ -74,7 +80,11 @@ def BreadthFirstSearch(Problem):
 
 # UCS
 def UniformCostSearch(Problem):
-    return GraphSearch(Problem, "UCS")
+    PreviousTime = time.time()
+    result = GraphSearch(Problem, "UCS")
+    NewTime = time.time()
+    print("The time is: ", NewTime - PreviousTime)
+    return result
 
 
 # DFS

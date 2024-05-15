@@ -70,53 +70,43 @@ with open('wilaya.json', 'r') as f:
     data = json.load(f)
 
 Lands = {}
+Wilayas : dict[int, Wilaya] = {}
 index = 1
 
 
 for country, wilaya in data.items():
 
     for wilaya, details in wilaya.items():
-        index_land = 100 * index
-        Area = details["Area"] / details["NumberLands"]
-        for i in range(details["NumberLands"]):
-            land = Land(index, index_land, Area)
-            for product, value in details["Products"].items():
-                land.set_product_yield(product, value)
-            Lands[index_land] = land
-            index_land += 1
+        newWilaya = Wilaya(index, details["Area"], details["NumberLands"])
+        
+        for product, value in details["Products"].items():
+            if value != 0:
+                newWilaya.set_product_yield(product, value)
+        Wilayas[index] = newWilaya
         index += 1
 
 
 
-"""for land in Lands.values():
-    print(land.land_id)
-    print(land.product_yields)"""
+"""for w in Wilayas.values():
+    for land in w.lands.values():
+        print(land.product_yields)
+        break"""
 
-InitialState = Country("Algeria", Lands)
+InitialState = Country("Algeria", Wilayas)
 
 selfSufficiency = {
-    "Wheat": 10500000,
-    "Corn": 9300000,
-    "Dates": 600000,
-    "Potatoes": 110000000,
-    "Tomatoes": 16400000,
-    "Green Pepper": 12700000,
-    "Aubergines": 126000
+    "Wheat": 10500,
+    "Corn": 9300,
+    "Dates": 60,
+    "Potatoes": 1100,
+    "Tomatoes": 1640,
+    "Green Pepper": 1270,
+    "Aubergines": 1260
   }
 
-goalState = Country("Algeria", Lands, selfSufficiency)
-
-"""newstate = copy.deepcopy(goalState)
-for product, value in newstate.current_production.items():
-    newstate.current_production[product] += 100000000000000
+goalState = Country("Algeria", Wilayas, selfSufficiency)
 
 
-goalState.print_production()
-newstate.print_production()"""
-
-#InitialState.plant(1, "Wheat")
-"""newstate = copy.deepcopy(InitialState)
-print(newstate.lands[1].isPlanted)"""
 
 
 problem = AgricultureProblem(InitialState, goalState)
@@ -124,6 +114,5 @@ problem = AgricultureProblem(InitialState, goalState)
 
 SolveProblem(problem)
 
-#problem.expand_node(Node(InitialState), "DFS")
 
 
